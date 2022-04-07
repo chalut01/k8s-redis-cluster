@@ -439,7 +439,7 @@ data:
     # such as CONFIG, DEBUG, and so forth. To a limited extent you can improve
     # security of read only replicas using 'rename-command' to shadow all the
     # administrative / dangerous commands.
-    replica-read-only yes
+    replica-read-only no
 
     # Replication SYNC strategy: disk or socket.
     #
@@ -468,7 +468,7 @@ data:
     #
     # With slow disks and fast (large bandwidth) networks, diskless replication
     # works better.
-    repl-diskless-sync no
+    repl-diskless-sync yes
 
     # When diskless replication is enabled, it is possible to configure the delay
     # the server waits in order to spawn the child that transfers the RDB via socket
@@ -480,7 +480,7 @@ data:
     #
     # The delay is specified in seconds, and by default is 5 seconds. To disable
     # it entirely just set it to 0 seconds and the transfer will start ASAP.
-    repl-diskless-sync-delay 5
+    repl-diskless-sync-delay 0
 
     # -----------------------------------------------------------------------------
     # WARNING: RDB diskless load is experimental. Since in this setup the replica
